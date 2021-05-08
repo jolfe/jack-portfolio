@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import logo from "./logo.png";
+import "./App.css";
+import LandingPage from "./components/LandingPage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import fullpage from "fullpage.js";
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactFullpage from "@fullpage/react-fullpage";
+import Section from "./components/Section";
+const App = () => (
+  <ReactFullpage
+    navigation
+    sectionsColor={["#282c34", "#ff5f45", "#0798ec"]}
+    render={({ state, fullpageApi }) => {
+      return (
+        <div>
+          <Section content={"Slide down!"} />
+          <Section content={"Keep going!"} />
+          <Section content={"Slide up!"} />
+        </div>
+      );
+    }}
+  />
+);
 
 export default App;
